@@ -67,7 +67,7 @@ body{
     justify-content: space-between;
     margin-bottom: -35px;
     margin: auto;
-    transition-duration: 700ms;
+    transition-duration: 800ms;
 }
 
 .navegacion_principal a:hover{
