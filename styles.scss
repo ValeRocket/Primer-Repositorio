@@ -22,6 +22,28 @@ body {
   box-sizing: inherit;
 }
 
+@mixin bg-color {
+  background-color: #ff5d00;
+}
+@mixin logo-size {
+    max-width: 400px;
+    max-height: 700px;
+}
+
+$palette: (
+  "primary": #ff5d00,
+  "white": #ffffff,
+  "dark": #0000,
+);
+
+.button-extend {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding: 10px 30px;
+      margin-top: 10px;
+      font-size: 20px;
+}
 /*-------------------------------CSS INDEX---------------------------------------*/
 
 .header_titulo {
@@ -33,13 +55,12 @@ body {
     margin-top: -80px;
   }
   .imagen_head {
-    max-width: 400px;
-    max-height: 700px;
+    @include logo-size;
   }
 }
 
 .navegacion_principal{
-  background-color: #ff5d00;
+  @include bg-color;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,7 +75,7 @@ body {
 }
 .navegacion_principal a {
   padding: 1rem;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -71,7 +92,7 @@ body {
   text-decoration: none;
 }
 .enlace-nav:hover {
-  color: white;
+  color: map-get($map: $palette, $key: "white" );
 }
 
 
@@ -93,7 +114,7 @@ body {
   background-size: cover;
   height: 450px;
   position: relative;
-  color: white;
+  color: map-get($map: $palette, $key: "white" );
   font-size: 20px;
   margin-top: -35px;
     .contenido-hero {
@@ -113,12 +134,7 @@ body {
       }
     }
     .boton {
-      background-color: black;
-      color: white;
-      text-decoration: none;
-      padding: 10px 30px;
-      margin-top: 10px;
-      font-size: 20px;
+      @extend .button-extend;
     }
     .boton:hover {
       background-color: #ff5d00;
